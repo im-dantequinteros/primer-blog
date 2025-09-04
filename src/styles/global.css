@@ -20,12 +20,26 @@ h1 {
   font-size: 2.5rem;
 }
 
+.hamburguer {
+  padding-right: 20px;
+  cursor: pointer;
+}
+
+.hamburguer .line {
+  display: block;
+  width: 40px;
+  height: 5px;
+  margin: 8px 0;
+  background-color: #ff9776;
+}
+
 .nav-links {
   width: 100%;
   top: 5rem;
   left: 48px;
   background-color: #ff9776;
   margin: 0;
+  display: none;
 }
 
 .nav-links a {
@@ -63,4 +77,9 @@ h1 {
     font-size: 1rem;
     color: black;
   }
+
+  .hamburguer {
+    display: none;
+  }
 }
+
