@@ -1,8 +1,6 @@
 ---
 import '../styles/global.css';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-const pageTitle = "Sobre Mí";
+import BaseLayout from '../layouts/BaseLayout.astro';
 const identity = {
     firstName: "Dante",
     lastName: "Quinteros",
@@ -14,36 +12,9 @@ const skills = ["HTML", "CSS", "JavaScript", "Astro", "React", "Node.js"];
 const happy = true;
 const finished = false;
 const goal = 3;
-
-const skillColor = "navy";
-const fontWeight = "700";
-const textCase = "uppercase";
 ---
 
-<html lang="es">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-        <style define:vars={{ skillColor, fontWeight, textCase}}>
-            h1 {
-                color: purple;
-                font-size: 4rem;
-                text-transform: var(--textCase);
-                font-weight: var(--fontWeight);
-            }
-
-            .skill {
-                color: var(--skillColor);
-                font-weight: bold;
-            }
-        </style>
-	</head>
-	<body>
-        <Header />
-		<h1>{pageTitle}</h1>
+<BaseLayout pageTitle="Acerca de Mi">
         <h2>...Y mi nuevo sitio web en Astro!</h2>
 		<p>Estoy trabajando en el tutorial introductorio de Astro. Esta es la segunda página de mi sitio web, ¡y es la primera que he construido yo mismo!</p>
         <p>Este sitio se irá actualizando a medida que vaya completando más partes del tutorial, ¡así que no dejes de visitarlo para ver cómo va mi viaje!</p>
@@ -64,9 +35,4 @@ const textCase = "uppercase";
         {happy && <p>¡Estoy muy feliz de estar aprendiendo Astro!</p>}
         {finished && <p>¡He terminado el tutorial introductorio de Astro!</p>}
         {goal === 3? <p>Mi objetivo es terminarlo en 3 días</p> : <p>Mi objetivo es terminarlo en 3 semanas</p>}
-        <Footer />
-        <script>
-            import '../scripts/menu.js';
-        </script>
-    </body>
-</html>
+</BaseLayout>

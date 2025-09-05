@@ -1,27 +1,11 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
 import '../styles/global.css';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-const pageTitle = "Página de Inicio";
 ---
 
-<html lang="es">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-	</head>
-	<body>
-		<Header />
-		<h1>{pageTitle}</h1>
-		<p>Mi primer sitio en Astro</p>
-		<p>¡Bienvenido a mi sitio web! Estoy emocionado de compartir mi viaje de aprendizaje con Astro contigo.</p>
-		<p>Este es el comienzo de algo genial, y estoy deseando ver a dónde me lleva este viaje. ¡Gracias por acompañarme!</p>
-		<Footer />
-		<script>
-			import '../scripts/menu.js';
-		</script>
-	</body>
-</html>
+<BaseLayout pageTitle="Home Page">
+	<h2>Mi primer sitio en Astro</h2>
+	<p>¡Bienvenido a mi sitio web! Estoy emocionado de compartir mi viaje de aprendizaje con Astro contigo.</p>
+	<p>Este es el comienzo de algo genial, y estoy deseando ver a dónde me lleva este viaje. ¡Gracias por acompañarme!</p>
+</BaseLayout>
+
